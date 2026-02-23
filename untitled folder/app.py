@@ -6,16 +6,13 @@ import streamlit as st
 
 st.set_page_config(page_title="Guessing Game")
 
-
-ASSETS_DIR = Path("/Users/shubham/Documents/untitled folder/assets")
-
+ASSETS_DIR = Path(__file__).parent / "assets"
 
 def find_first_existing(paths: list[Path]) -> Optional[Path]:
     for path in paths:
         if path.exists():
             return path
     return None
-
 
 BACKGROUND_IMAGE = find_first_existing(
     [
@@ -25,6 +22,7 @@ BACKGROUND_IMAGE = find_first_existing(
         ASSETS_DIR / "cat_pondering.jpeg",
     ]
 )
+
 WIN_IMAGE = find_first_existing(
     [
         ASSETS_DIR / "when_your_educated_guess_is_correct.jpg",
