@@ -14,6 +14,7 @@ def find_first_existing(paths: list[Path]) -> Optional[Path]:
             return path
     return None
 
+
 BACKGROUND_IMAGE = find_first_existing(
     [
         ASSETS_DIR / "cat_pondering.png",
@@ -22,7 +23,6 @@ BACKGROUND_IMAGE = find_first_existing(
         ASSETS_DIR / "cat_pondering.jpeg",
     ]
 )
-
 WIN_IMAGE = find_first_existing(
     [
         ASSETS_DIR / "when_your_educated_guess_is_correct.jpg",
@@ -53,6 +53,13 @@ def set_global_text_black() -> None:
         [data-testid="InputInstructions"],
         [data-testid="InputInstructions"] * {
             color: #ffffff !important;
+        }
+
+        div[data-testid="stTextInput"] input,
+        div[data-testid="stTextInput"] textarea {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            caret-color: #ffffff !important;
         }
         </style>
         """,
